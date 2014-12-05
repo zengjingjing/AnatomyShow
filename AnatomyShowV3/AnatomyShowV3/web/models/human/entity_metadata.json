@@ -1,0 +1,15 @@
+{
+"layers":[11],
+"dag":[[11,[110]],[1,[11]]],
+"symmetries":[],
+"names":
+[[11,"muscle_layer"],[110,"aaa"]
+],
+"leafs":
+[[110,"aaa"]
+],
+"hidden":[1,11],
+"nodes":
+[[1,"human"],[11,"muscle_layer"]],
+"sublayers":[]
+}

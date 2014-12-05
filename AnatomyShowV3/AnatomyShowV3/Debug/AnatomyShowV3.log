@@ -1,0 +1,43 @@
+﻿生成启动时间为 2014/12/5 18:05:31。
+     1>项目“D:\workspace\AnatomyShowV3\AnatomyShowV3\AnatomyShowV3.vcxproj”在节点 2 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在创建“Debug\AnatomyShowV3.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       CustomBuild:
+         Rcc'ing anatomyshow.qrc...
+     1>D:\workspace\AnatomyShowV3\AnatomyShowV3\anatomyshow.qrc : warning : potential duplicate alias detected: 'anatomy.jpg'
+       ClCompile:
+         所有输出均为最新。
+         D:\application\vs2010\VC\bin\CL.exe /c /I.\GeneratedFiles /I. /ID:\application\Qt\4.8.5\include /I.\GeneratedFiles\Debug /ID:\application\Qt\4.8.5\include\QtCore /ID:\application\Qt\4.8.5\include\QtGui /I"D:\lab\VTK\vtk5.10.1\VTK5.10.1-build" /I"D:\lab\VTK\vtk5.10.1\VTK5.10.1-build\Common" /I"D:\lab\VTK\vtk5.10.1\VTK5.10.1-build\Utilities" /I"D:\lab\VTK\vtk5.10.1\VTK5.10.1-build\VolumeRendering" /I"D:\lab\VTK\vtk5.10.1\VTK5.10.1-build\Rendering" /I"D:\lab\VTK\vtk5.10.1\VTK5.10.1-build\Charts" /I"D:\lab\VTK\vtk5.10.1\VTK5.10.1-build\Chemistry" /I"D:\lab\VTK\vtk5.10.1\VTK5.10.1-build\Utilities\vtkalglib" /ID:\lab\VTK\vtk5.10.1\VTK5.10.1\Infovis /ID:\lab\VTK\vtk5.10.1\VTK5.10.1\Geovis /ID:\lab\VTK\vtk5.10.1\VTK5.10.1\Views /ID:\lab\VTK\vtk5.10.1\VTK5.10.1\VolumeRendering /ID:\lab\VTK\vtk5.10.1\VTK5.10.1\Hybrid /ID:\lab\VTK\vtk5.10.1\VTK5.10.1\Widgets /ID:\lab\VTK\vtk5.10.1\VTK5.10.1\Rendering /ID:\lab\VTK\vtk5.10.1\VTK5.10.1\Charts /ID:\lab\VTK\vtk5.10.1\VTK5.10.1\Chemistry /ID:\lab\VTK\vtk5.10.1\VTK5.10.1\Rendering\Testing\Cxx /ID:\lab\VTK\vtk5.10.1\VTK5.10.1\IO /ID:\lab\VTK\vtk5.10.1\VTK5.10.1\Imaging /ID:\lab\VTK\vtk5.10.1\VTK5.10.1\Graphics /ID:\lab\VTK\vtk5.10.1\VTK5.10.1\GenericFiltering /ID:\lab\VTK\vtk5.10.1\VTK5.10.1\Filtering /ID:\lab\VTK\vtk5.10.1\VTK5.10.1\Common /ID:\lab\VTK\vtk5.10.1\VTK5.10.1\Utilities /ID:\lab\VTK\vtk5.10.1\VTK5.10.1\Common\Testing\Cxx /I"D:\lab\VTK\vtk5.10.1\VTK5.10.1-build\Utilities\vtknetcdf" /ID:\lab\VTK\vtk5.10.1\VTK5.10.1\Utilities\vtknetcdf /ID:\lab\VTK\vtk5.10.1\VTK5.10.1\Utilities\vtknetcdf\include /I"D:\lab\VTK\vtk5.10.1\VTK5.10.1-build\Utilities\vtklibproj4" /ID:\lab\VTK\vtk5.10.1\VTK5.10.1\Utilities\vtklibproj4 /I"D:\lab\VTK\vtk5.10.1\VTK5.10.1-build\Utilities\DICOMParser" /ID:\lab\VTK\vtk5.10.1\VTK5.10.1\Utilities\DICOMParser /I"D:\lab\VTK\vtk5.10.1\VTK5.10.1-build\Utilities\vtkfreetype\include" /ID:\lab\VTK\vtk5.10.1\VTK5.10.1\Utilities\vtkfreetype\include /I"D:\lab\VTK\vtk5.10.1\VTK5.10.1-build\Utilities\LSDyna" /ID:\lab\VTK\vtk5.10.1\VTK5.10.1\Utilities\LSDyna /I"D:\lab\VTK\vtk5.10.1\VTK5.10.1-build\Utilities\MaterialLibrary" /ID:\lab\VTK\vtk5.10.1\VTK5.10.1\Utilities\MaterialLibrary /I"D:\lab\VTK\vtk5.10.1\VTK5.10.1-build\Utilities\vtkmetaio" /ID:\lab\VTK\vtk5.10.1\VTK5.10.1\Utilities\vtkmetaio /I"D:\lab\VTK\vtk5.10.1\VTK5.10.1-build\Utilities\verdict" /ID:\lab\VTK\vtk5.10.1\VTK5.10.1\Utilities\verdict /I"D:\lab\VTK\vtk5.10.1\VTK5.10.1-build\Utilities\vtkhdf5" /ID:\lab\VTK\vtk5.10.1\VTK5.10.1\Utilities\vtkhdf5 /I"D:\lab\VTK\vtk5.10.1\VTK5.10.1-build\Utilities\vtkhdf5\src" /ID:\lab\VTK\vtk5.10.1\VTK5.10.1\Utilities\vtkhdf5\src /I"D:\lab\VTK\vtk5.10.1\VTK5.10.1-build\Utilities\vtkhdf5\hl\src" /ID:\lab\VTK\vtk5.10.1\VTK5.10.1\Utilities\vtkhdf5\hl\src /ID:\lab\VTK\vtk5.10.1\VTK5.10.1\Utilities\utf8\source /ID:\lab\VTK\vtk5.10.1\VTK5.10.1\GUISupport\Qt /I"D:\lab\VTK\vtk5.10.1\VTK5.10.1-build\GUISupport\Qt" /ID:\lab\VTK\vtk5.10.1\VTK5.10.1\GUISupport\Qt\Chart /I"D:\lab\VTK\vtk5.10.1\VTK5.10.1-build\GUISupport\Qt\Chart" /ID:\lab\VTK\vtk5.10.1\VTK5.10.1\Utilities\vtkalglib /ID:\application\Qt\4.8.5\include /ID:\application\Qt\4.8.5\include\QtGui /ID:\application\Qt\4.8.5\include\QtCore /Zi /nologo /W1 /WX- /Od /Oy- /D UNICODE /D WIN32 /D QT_DLL /D QT_CORE_LIB /D QT_GUI_LIB /D _USE_MATH_DEFINES /D NOMINMAX /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t- /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt GeneratedFiles\qrc_anatomyshow.cpp
+         qrc_anatomyshow.cpp
+       ResourceCompile:
+         所有输出均为最新。
+       Link:
+         D:\application\vs2010\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\workspace\AnatomyShowV3\Win32\Debug\\AnatomyShowV3.exe" /NOLOGO /LIBPATH:D:\application\Qt\4.8.5\lib qtmaind.lib QtCored4.lib QtGuid4.lib OpenMeshToolsd.lib OpenMeshCored.lib opencv_calib3d246d.lib opencv_contrib246d.lib opencv_core246d.lib opencv_features2d246d.lib opencv_flann246d.lib opencv_gpu246d.lib opencv_highgui246d.lib opencv_imgproc246d.lib opencv_legacy246d.lib opencv_ml246d.lib opencv_objdetect246d.lib opencv_ts246d.lib opencv_video246d.lib "D:\lab\VTK\vtk5.10.1\VTK5.10.1-build\bin\Debug\vtkCommon.lib" "D:\lab\VTK\vtk5.10.1\VTK5.10.1-build\bin\Debug\vtkFiltering.lib" "D:\lab\VTK\vtk5.10.1\VTK5.10.1-build\bin\Debug\vtkImaging.lib" "D:\lab\VTK\vtk5.10.1\VTK5.10.1-build\bin\Debug\vtkGraphics.lib" "D:\lab\VTK\vtk5.10.1\VTK5.10.1-build\bin\Debug\vtkGenericFiltering.lib" "D:\lab\VTK\vtk5.10.1\VTK5.10.1-build\bin\Debug\vtkIO.lib" "D:\lab\VTK\vtk5.10.1\VTK5.10.1-build\bin\Debug\vtkRendering.lib" "D:\lab\VTK\vtk5.10.1\VTK5.10.1-build\bin\Debug\vtkVolumeRendering.lib" "D:\lab\VTK\vtk5.10.1\VTK5.10.1-build\bin\Debug\vtkHybrid.lib" "D:\lab\VTK\vtk5.10.1\VTK5.10.1-build\bin\Debug\vtkWidgets.lib" "D:\lab\VTK\vtk5.10.1\VTK5.10.1-build\bin\Debug\vtkInfovis.lib" "D:\lab\VTK\vtk5.10.1\VTK5.10.1-build\bin\Debug\vtkGeovis.lib" "D:\lab\VTK\vtk5.10.1\VTK5.10.1-build\bin\Debug\vtkViews.lib" "D:\lab\VTK\vtk5.10.1\VTK5.10.1-build\bin\Debug\vtkCharts.lib" "D:\lab\VTK\vtk5.10.1\VTK5.10.1-build\bin\Debug\QVTK.lib" "D:\lab\VTK\vtk5.10.1\VTK5.10.1-build\bin\Debug\vtksys.lib" ws2_32.lib D:\application\Qt\4.8.5\lib\QtWebKitd4.lib D:\application\Qt\4.8.5\lib\QtXmlPatternsd4.lib D:\application\Qt\4.8.5\lib\QtGuid4.lib D:\application\Qt\4.8.5\lib\QtSqld4.lib D:\application\Qt\4.8.5\lib\QtNetworkd4.lib D:\application\Qt\4.8.5\lib\QtCored4.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\AnatomyShowV3.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\workspace\AnatomyShowV3\Win32\Debug\AnatomyShowV3.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\workspace\AnatomyShowV3\Win32\Debug\AnatomyShowV3.lib" /MACHINE:X86 Debug\AnatomyShowV3.res
+         Debug\anatomydefine.obj
+         Debug\anatomyshow.obj
+         Debug\moc_anatomydefine.obj
+         Debug\moc_anatomyshow.obj
+         Debug\moc_generatemodelthread.obj
+         Debug\moc_helpvizard.obj
+         Debug\moc_imageprocessthread.obj
+         Debug\moc_imagesegmentation.obj
+         Debug\moc_meshprocess.obj
+         Debug\qrc_anatomyshow.obj
+         Debug\generatemodelthread.obj
+         Debug\helpvizard.obj
+         Debug\imageprocessthread.obj
+         Debug\imagesegmentation.obj
+         Debug\main.obj
+         Debug\meshprocess.obj
+         LINK : 没有找到 D:\workspace\AnatomyShowV3\Win32\Debug\\AnatomyShowV3.exe 或上一个增量链接没有生成它；正在执行完全链接
+         AnatomyShowV3.vcxproj -> D:\workspace\AnatomyShowV3\Win32\Debug\AnatomyShowV3.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"D:\workspace\AnatomyShowV3\Win32\Debug\\AnatomyShowV3.exe;#1" /manifest Debug\AnatomyShowV3.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         正在删除文件“Debug\AnatomyShowV3.unsuccessfulbuild”。
+         正在对“Debug\AnatomyShowV3.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“D:\workspace\AnatomyShowV3\AnatomyShowV3\AnatomyShowV3.vcxproj”(build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:03.58

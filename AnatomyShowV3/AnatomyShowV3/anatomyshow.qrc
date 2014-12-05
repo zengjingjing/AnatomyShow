@@ -1,0 +1,22 @@
+<RCC>
+    <qresource prefix="/MyImages">
+        <file>images/add.png</file>
+        <file>images/add2.png</file>
+        <file>images/arrowdown.png</file>
+        <file>images/arrowdown2.png</file>
+        <file>images/nextdisable.png</file>
+        <file>images/nextenable.png</file>
+        <file>images/open.png</file>
+        <file>images/openbmp.png</file>
+        <file>images/opendicom.png</file>
+        <file>images/right.png</file>
+        <file>images/save.png</file>
+        <file>images/segmentation.png</file>
+        <file>images/segmentation2.png</file>
+        <file>images/starthandle.png</file>
+        <file>images/sub.png</file>
+        <file>images/toturial.png</file>
+        <file>images/anatomy.jpg</file>
+        <file>images/anatomy.jpg</file>
+    </qresource>
+</RCC>
