@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>K12 个性化学习 Web Demo</title>
+  <style>
+    :root {
+      --bg: #f6f8ff;
+      --panel: #ffffff;
+      --primary: #4f46e5;
+      --secondary: #06b6d4;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --good: #16a34a;
+      --warn: #f59e0b;
+      --bad: #dc2626;
+      --border: #e5e7eb;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: linear-gradient(130deg, #eef2ff 0%, #f5fdff 100%);
+      color: var(--text);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 24px auto;
+      padding: 0 16px 36px;
+    }
+
+    h1 {
+      margin: 8px 0;
+      font-size: 1.8rem;
+    }
+
+    .subtitle {
+      margin: 0 0 20px;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 16px;
+    }
+
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+      box-shadow: 0 8px 24px rgba(79, 70, 229, 0.08);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.1rem;
+    }
+
+    label {
+      display: block;
+      margin: 12px 0 6px;
+      font-size: 0.92rem;
+      color: #374151;
+      font-weight: 600;
+    }
+
+    select, input[type="number"], input[type="range"], button {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px;
+      font-size: 0.95rem;
+      background: #fff;
+    }
+
+    input[type="range"] { padding: 0; }
+
+    .btns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    button {
+      cursor: pointer;
+      background: linear-gradient(90deg, var(--primary), #6366f1);
+      color: #fff;
+      border: none;
+      font-weight: 700;
+    }
+
+    button.secondary {
+      background: linear-gradient(90deg, var(--secondary), #0891b2);
+    }
+
+    .student-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      border-radius: 999px;
+      font-size: 0.8rem;
+      padding: 6px 10px;
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .good { background: var(--good); }
+    .warn { background: var(--warn); }
+    .bad { background: var(--bad); }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(120px, 1fr));
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .stat {
+      background: #f9fafb;
+      border: 1px solid #edf0f3;
+      border-radius: 10px;
+      padding: 10px;
+    }
+
+    .stat .label {
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .stat .value {
+      margin-top: 4px;
+      font-size: 1.08rem;
+      font-weight: 700;
+    }
+
+    .tasks {
+      margin-top: 14px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .task {
+      border: 1px solid #e8ecff;
+      background: #fbfcff;
+      border-radius: 12px;
+      padding: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .task-meta {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .difficulty {
+      min-width: 86px;
+      text-align: center;
+      border-radius: 999px;
+      padding: 6px 8px;
+      color: #fff;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .d-easy { background: #10b981; }
+    .d-mid { background: #f59e0b; }
+    .d-hard { background: #ef4444; }
+
+    .tips {
+      margin-top: 14px;
+      padding: 12px;
+      border-radius: 10px;
+      background: #ecfeff;
+      border: 1px solid #a5f3fc;
+      color: #155e75;
+      font-size: 0.9rem;
+    }
+
+    .footer-note {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>K12 个性化学习演示系统</h1>
+    <p class="subtitle">根据学生画像实时推荐学习任务，模拟“诊断 → 推荐 → 反馈 → 调整”闭环。</p>
+
+    <div class="grid">
+      <section class="card">
+        <h2>学生画像输入</h2>
+        <label for="grade">年级</label>
+        <select id="grade">
+          <option value="3">小学三年级</option>
+          <option value="4">小学四年级</option>
+          <option value="5">小学五年级</option>
+          <option value="6">小学六年级</option>
+          <option value="7">初一</option>
+          <option value="8">初二</option>
+          <option value="9">初三</option>
+        </select>
+
+        <label for="subject">学科</label>
+        <select id="subject">
+          <option value="math">数学</option>
+          <option value="chinese">语文</option>
+          <option value="english">英语</option>
+        </select>
+
+        <label for="mastery">知识掌握度（%）</label>
+        <input id="mastery" type="range" min="0" max="100" value="62" />
+        <div id="masteryVal">62%</div>
+
+        <label for="focus">专注度（1-10）</label>
+        <input id="focus" type="number" min="1" max="10" value="7" />
+
+        <label for="goal">本周目标（分钟）</label>
+        <input id="goal" type="number" min="30" step="10" value="180" />
+
+        <div class="btns">
+          <button id="planBtn">生成学习路径</button>
+          <button class="secondary" id="simulateBtn">模拟完成一次任务</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="student-header">
+          <h2 id="planTitle">个性化学习方案</h2>
+          <span id="riskBadge" class="badge warn">中风险</span>
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <div class="label">预计正确率</div>
+            <div id="accuracy" class="value">--</div>
+          </div>
+          <div class="stat">
+            <div class="label">推荐难度</div>
+            <div id="level" class="value">--</div>
+          </div>
+          <div class="stat">
+            <div class="label">今日建议时长</div>
+            <div id="duration" class="value">--</div>
+          </div>
+          <div class="stat">
+            <div class="label">学习动机指数</div>
+            <div id="motivation" class="value">--</div>
+          </div>
+        </div>
+
+        <div id="tasks" class="tasks"></div>
+        <div id="tips" class="tips"></div>
+        <p class="footer-note">提示：该 demo 仅用于展示个性化推荐逻辑，不代表真实教育测评系统。</p>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    const taskBank = {
+      math: [
+        { title: "基础计算训练", focus: "运算准确性", diff: 1 },
+        { title: "分层应用题", focus: "建模与分析", diff: 2 },
+        { title: "拓展思维挑战", focus: "高阶推理", diff: 3 }
+      ],
+      chinese: [
+        { title: "字词巩固", focus: "识记与应用", diff: 1 },
+        { title: "阅读理解分层练习", focus: "信息提取与推断", diff: 2 },
+        { title: "主题写作任务", focus: "表达与创造", diff: 3 }
+      ],
+      english: [
+        { title: "词汇闯关", focus: "词汇识记", diff: 1 },
+        { title: "语法情境训练", focus: "规则迁移", diff: 2 },
+        { title: "短文阅读与复述", focus: "综合语言输出", diff: 3 }
+      ]
+    };
+
+    const mastery = document.getElementById("mastery");
+    const masteryVal = document.getElementById("masteryVal");
+    const grade = document.getElementById("grade");
+    const subject = document.getElementById("subject");
+    const focus = document.getElementById("focus");
+    const goal = document.getElementById("goal");
+
+    mastery.addEventListener("input", () => {
+      masteryVal.textContent = `${mastery.value}%`;
+    });
+
+    function difficultyLabel(d) {
+      if (d <= 1) return ["基础", "d-easy"];
+      if (d === 2) return ["进阶", "d-mid"];
+      return ["挑战", "d-hard"];
+    }
+
+    function riskBy(masteryScore, focusScore) {
+      if (masteryScore < 45 || focusScore <= 4) return ["高风险", "bad"];
+      if (masteryScore < 70 || focusScore <= 7) return ["中风险", "warn"];
+      return ["低风险", "good"];
+    }
+
+    function generatePlan(simulate = false) {
+      const m = Number(mastery.value);
+      const f = Number(focus.value);
+      const g = Number(goal.value);
+      const gr = Number(grade.value);
+      const s = subject.value;
+
+      const baseLevel = m < 45 ? 1 : m < 75 ? 2 : 3;
+      const adjustedLevel = Math.max(1, Math.min(3, baseLevel + (f >= 8 ? 1 : f <= 4 ? -1 : 0)));
+      const expectedAccuracy = Math.max(50, Math.min(98, Math.round(m * 0.7 + f * 3 + (simulate ? 3 : 0))));
+      const todayDuration = Math.round((g / 7) * (f < 5 ? 0.8 : f > 8 ? 1.1 : 1));
+      const motivation = Math.max(40, Math.min(100, Math.round(f * 8 + m * 0.3 + (simulate ? 4 : 0))));
+
+      const [riskText, riskClass] = riskBy(m, f);
+      const badge = document.getElementById("riskBadge");
+      badge.textContent = riskText;
+      badge.className = `badge ${riskClass}`;
+
+      document.getElementById("planTitle").textContent = `${gr}年级 · ${subject.options[subject.selectedIndex].text} 个性化方案`;
+      document.getElementById("accuracy").textContent = `${expectedAccuracy}%`;
+      document.getElementById("level").textContent = ["基础", "进阶", "挑战"][adjustedLevel - 1];
+      document.getElementById("duration").textContent = `${todayDuration} 分钟`;
+      document.getElementById("motivation").textContent = `${motivation}/100`;
+
+      const selected = taskBank[s]
+        .map(t => {
+          const levelGap = Math.abs(t.diff - adjustedLevel);
+          return { ...t, score: 100 - levelGap * 35 + (m < 55 && t.diff === 1 ? 10 : 0) + (m > 80 && t.diff === 3 ? 10 : 0) };
+        })
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 3);
+
+      const taskHtml = selected.map((t, idx) => {
+        const [label, cls] = difficultyLabel(t.diff);
+        return `
+          <div class="task">
+            <div>
+              <strong>${idx + 1}. ${t.title}</strong>
+              <div class="task-meta">训练重点：${t.focus} · 推荐指数：${t.score}</div>
+            </div>
+            <span class="difficulty ${cls}">${label}</span>
+          </div>
+        `;
+      }).join("");
+
+      document.getElementById("tasks").innerHTML = taskHtml;
+
+      const tips = [];
+      if (m < 50) tips.push("先完成基础任务，建立正确率后再提升难度。");
+      if (f <= 5) tips.push("建议采用 15-20 分钟番茄学习法，中间休息 5 分钟。");
+      if (m >= 75 && f >= 8) tips.push("可加入项目式任务，提升综合迁移能力。");
+      if (simulate) tips.push("已模拟一次正向反馈：系统适度上调推荐难度并增强动机激励。");
+      if (tips.length === 0) tips.push("当前学习状态稳定，保持节奏并进行阶段复盘。");
+
+      document.getElementById("tips").innerHTML = `<strong>AI 教学建议：</strong>${tips.join(" ")}`;
+    }
+
+    document.getElementById("planBtn").addEventListener("click", () => generatePlan(false));
+    document.getElementById("simulateBtn").addEventListener("click", () => generatePlan(true));
+
+    generatePlan();
+  </script>
+</body>
+</html>
